@@ -1,0 +1,13 @@
+fastapi
+uvicorn[standard]
+requests
+
+# Optional but commonly needed by FastAPI projects
+python-multipart
+
+# If your agent uses any ML/stats later (predictor.py might)
+numpy
+pandas
+
+# If your insights or predictions need it (common)
+scikit-learn
