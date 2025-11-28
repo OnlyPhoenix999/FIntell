@@ -24,8 +24,8 @@ class _SplashScreenState extends State<SplashScreen>
   static const String _imageUrl =
       "https://www.gstatic.com/flutter-onestack-prototype/genui/example_1.jpg";
 
-  final List<String> coinAssets = ["Assests/coins/dollar.png"];
-  final List<String> noteAssets = ["Assests/notes/note.png"];
+  final List<String> coinAssets = ["assets/coins/dollar.png"];
+  final List<String> noteAssets = ["assets/notes/dollar-bill.png"];
 
   @override
   void initState() {
