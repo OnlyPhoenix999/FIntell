@@ -7,6 +7,8 @@ from typing import List, Dict, Any
 import requests
 from fastapi import FastAPI
 import os
+from save_win.db import init_savewin_db
+from save_win.endpoints import router as savewin_router
 
 # ------------------------------------------------------------
 # CONFIG — Always use backend/fiu.db
@@ -219,6 +221,12 @@ def save_fi_data(user_id, fi_response):
 # ------------------------------------------------------------
 # FIU API ENDPOINTS
 # ------------------------------------------------------------
+
+@app.on_event("startup")
+def startup():
+    init_savewin_db()
+
+app.include_router(savewin_router)
 
 @app.get("/fiu/sync/{user_id}/{vua}")
 def sync_from_aa(user_id: str, vua: str):
